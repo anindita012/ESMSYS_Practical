@@ -1,0 +1,63 @@
+<div style="background-color: blueviolet;padding-bottom: 50px;">
+    <div class="main-div">
+    <mat-card>
+      <mat-card-header style="height: 200px;">
+            <img
+                src="assets/images/1517535342273.jpg"
+              />
+      </mat-card-header>
+      <mat-card-header>
+        <div style="text-align: center;padding-left: 50px;padding-right: 50px;color: grey;">
+          <span>Don't have an account? Create your </span>
+          <br>
+            <span>own account,it takes less than a minute</span>
+      </div>
+      </mat-card-header>
+      <mat-card-content style="margin-top: 30px;">
+        <form [formGroup]="signUpForm">
+          <label>First Name *</label>
+          <div style="padding-top: 5px;padding-bottom: 8px;">
+          <mat-form-field appearance="outline" [style.width.px]=400>
+            <input matInput placeholder="Enter FirstName" formControlName="FirstName">
+          </mat-form-field>
+          </div>
+          <label>Last Name *</label>
+          <div style="padding-top: 5px;padding-bottom: 8px;">
+          <mat-form-field appearance="outline" [style.width.px]=400>
+            <input matInput placeholder="Enter LastName" formControlName="LastName">
+          </mat-form-field>
+          </div>
+          <label>Email *</label>
+          <div style="padding-top: 5px;padding-bottom: 8px;">
+          <mat-form-field appearance="outline" [style.width.px]=400>
+            <input matInput placeholder="Email" formControlName="Email">
+          </mat-form-field>
+          </div>
+          <label>Mobile Number *</label>
+          <div style="padding-top: 5px;padding-bottom: 8px;">
+          <mat-form-field appearance="outline" [style.width.px]=400>
+            <input matInput placeholder="Enter Mobile Number" formControlName="MobileNo">
+          </mat-form-field>
+          </div>
+          <label>Password </label>
+          <div style="padding-top: 5px;">
+          <mat-form-field appearance="outline" [style.width.px]=400>
+            <input matInput placeholder="Enter Password" formControlName="Password" type="password">
+          </mat-form-field>
+          </div>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <div style="margin-bottom: 20px;">
+        <button type="submit" mat-raised-button [style.width.px]=400 style="background-color: #4AB096; " (click)="SubmitData()">Submit</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+    
+    </div>
+    <div style="text-align: center;margin-top: 0%;">
+    <span style="color:#D6D5CB;">Already have Account? </span><a class="link" href="/login" style="text-decoration:none;">
+     <b style="color: white;"> Login </b>
+    </a>
+    </div>
+    </div>

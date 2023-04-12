@@ -1,0 +1,48 @@
+<div style="background-color: blueviolet;padding-bottom: 100px;">
+    <div class="main-div">
+    <mat-card>
+      <mat-card-header style="height: 200px;">
+            <img
+                src="assets/images/1517535342273.jpg"
+              />
+      </mat-card-header>
+      <mat-card-header>
+        <div style="text-align: center;padding-left: 50px;padding-right: 50px;color: grey;">
+          <span>Enter your email address and password to  </span>
+          <br>
+            <span>access admin panel</span>
+      </div>
+      </mat-card-header>
+      <mat-card-content style="margin-top: 30px;">
+        <form [formGroup]="loginForm">
+          <label>Email or Phone No.</label>
+          <div style="padding-top: 5px;padding-bottom: 8px;">
+          <mat-form-field appearance="outline" [style.width.px]=400>
+            <input matInput placeholder="Enter Email or Phone No." formControlName="EmailOrMobileNo">
+          </mat-form-field>
+          </div>
+          <label>Password</label>
+          <div style="padding-top: 5px;padding-bottom: 8px;">
+          <mat-form-field appearance="outline" [style.width.px]=400>
+            <input matInput placeholder="Enter Password" formControlName="Password" type="password">
+          </mat-form-field>
+          </div>
+        </form>
+      </mat-card-content>
+      <mat-card-actions>
+        <div style="margin-bottom: 20px;">
+        <button type="submit" mat-raised-button [style.width.px]=400 style="background-color: blueviolet;" (click)="loginCheck()">Log In</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+    
+    </div>
+    <div style="text-align: center;margin-top: 0%;">
+    <span style="color:#D6D5CB;" routerLink="/forgotPassword">Forgot your Password ? </span>
+    <br>
+    <span style="color:#D6D5CB;">Don't have an account ? </span>
+    <a class="link" href="/" style="text-decoration:none;">
+      <b style="color: white;">Sign Up </b></a>
+    </div>
+    </div>
+

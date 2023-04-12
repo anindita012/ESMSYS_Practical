@@ -1,0 +1,101 @@
+<h4>EPP Details By UserID</h4>
+<div style="padding-bottom: 15px; padding-left: 10px; padding-right: 10px">
+  <hr color="grey" size="2" />
+</div>
+<div style="padding-top: 10px;padding-bottom: 10px;">
+  <b style="padding-left: 10px;padding-right: 10px;">Name</b>
+  <span style="padding-left: 10px;padding-right: 10px;">{{this.dataSource.data[0].FirstName}} {{this.dataSource.data[0].LastName}}</span>
+  <b style="padding-left: 15px;padding-right: 15px;">Mobile Number</b>
+  <span style="padding-left: 5px;padding-right: 5px;">{{this.dataSource.data[0].MobileNo}}</span>
+  <b style="padding-left: 15px;padding-right: 15px;">Email</b>
+  <span style="padding-left: 5px;padding-right: 5px;">{{this.dataSource.data[0].EmailID}}</span>
+</div>
+<div style="padding: 10px;">
+<div style="float: left;">
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,10,15,20]">
+    </mat-paginator>
+</div>
+<div style="float: right;">
+        <b> Search : </b>
+    <mat-form-field  appearance="outline">
+      <input matInput type="text" (keyup)="doFilter($event)">
+    </mat-form-field>
+</div>
+<table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="UserID">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Sr. No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.UserID}} </td>
+    </ng-container>
+    <ng-container matColumnDef="district">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> District </th>
+      <td mat-cell *matCellDef="let element"> {{element.district}}  </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="taluka">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Taluka </th>
+      <td mat-cell *matCellDef="let element"> {{element.taluka}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="village">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Village </th>
+      <td mat-cell *matCellDef="let element">{{element.village}}
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="citysurveyoffice">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> City Survey Office </th>
+        <td mat-cell *matCellDef="let element">{{element.citysurveyoffice}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="ward">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ward </th>
+        <td mat-cell *matCellDef="let element">{{element.ward}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="sheetno">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Sheet No. </th>
+        <td mat-cell *matCellDef="let element">{{element.sheetno}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="survey_number">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Survey Number </th>
+        <td mat-cell *matCellDef="let element">{{element.survey_number}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="start_date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </th>
+        <td mat-cell *matCellDef="let element">{{element.start_date | date: 'dd/MM/yyyy'}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="end_date">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> End Date </th>
+        <td mat-cell *matCellDef="let element">{{element.end_date | date: 'dd/MM/yyyy'}}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Active">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Active Status </th>
+        <td mat-cell *matCellDef="let element">{{element.active}}
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Actions </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button>
+                <mat-icon>add</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+ 
+</div>
+  
